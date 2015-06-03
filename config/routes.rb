@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  root 'employees#index'
+
+  get 'employees' => 'employees#index'
+
   get 'example' => 'example#index'
+
+  namespace :api do
+    resources :employees, defaults: { format: :json }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
