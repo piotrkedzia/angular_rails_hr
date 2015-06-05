@@ -1,5 +1,6 @@
-<div ng-app='app.employeeApp' ng-controller='EmployeeListCtrl'>
-  <table ng-if="employees">
+<div ng-app='app.employeeApp' ng-controller='EmployeeListCtrl' class="col-xs-8">
+  <h1>Employees List</h1>
+  <table ng-if="employees" class="table table-hover table-striped">
     <thead>
       <th>Name</th>
       <th>Email</th>
@@ -8,9 +9,9 @@
     </thead>
     <tbody>
       <tr ng-repeat="employee in employees">
-        <td>{{ employee.name }}</td>
+        <td><a ng-click="editEmployee(employee)">{{ employee.name }}</a></td>
         <td>{{ employee.email }}</td>
-        <td>{{ employee.ssn }}</td>
+        <td>{{ employee.ssn | empMaskNumber: 4 }}</td>
         <td>{{ employee.salary | currency }}</td>
       </tr>
     </tbody>

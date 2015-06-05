@@ -3,7 +3,9 @@
     "name": "bower-rails generated lib assets",
     "dependencies": {
       "angular": "v1.2.25",
-      "restangular": "v1.4.0"
+      "restangular": "v1.4.0",
+      "angular-bootstrap": "v0.11.0",
+      "angular-mocks": "v1.3.2"
     }
   },
   "vendor": {

@@ -5,6 +5,12 @@
 //= require lodash
 //= require restangular
 
+
+//= require angular-bootstrap
+//= require bootstrap-sprockets
+
+//= require ng-rails-csrf
+
 //= require angular-app/app
 //= require_tree ./angular-app/templates
 //= require_tree ./angular-app/modules

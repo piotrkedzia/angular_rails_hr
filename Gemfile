@@ -7,6 +7,8 @@ gem 'rails', '4.1.0'
 gem 'angular-rails-templates'
 gem 'bower-rails'
 gem 'active_model_serializers'
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'ng-rails-csrf'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -42,6 +44,7 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
+  gem 'jasmine-rails'
 end
 
 group :test do
