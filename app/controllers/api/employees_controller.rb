@@ -19,6 +19,15 @@ class Api::EmployeesController < ApplicationController
     end
   end
 
+  def create
+    employee = Employee.new(employee_params)
+    if employee.save
+      render json: employee
+    else
+      render json: employee.errors.messages, status: :bad_request
+    end
+  end
+
   def employee_params
     attributes = [
       :salary,

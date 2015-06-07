@@ -1,0 +1,4 @@
+[  1]  # employees_controller.rb       /home/piotr/workspace/angular_rails_hr/app/controllers/api
+[  4]    routes.rb                     /home/piotr/workspace/angular_rails_hr/config
+[  9]>   employees_controller_spec.rb  /home/piotr/workspace/angular_rails_hr/spec/controllers/api
+[ 19]    employees.rb                  /home/piotr/workspace/angular_rails_hr/spec/factories

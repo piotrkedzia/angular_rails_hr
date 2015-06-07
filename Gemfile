@@ -9,6 +9,7 @@ gem 'bower-rails'
 gem 'active_model_serializers'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'ng-rails-csrf'
+gem 'pry'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

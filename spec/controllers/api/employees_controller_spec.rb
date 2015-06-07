@@ -33,4 +33,21 @@ describe Api::EmployeesController do
       expect(@employee.reload.salary).to eq(60000)
     end
   end
+  describe "#create" do
+    it 'should succesfully respond to creates' do
+      post :create, employee: {
+            name: 'John',
+            email: 'john@example.com',
+            salary: '44332',
+            ssn: '123-45-6789'
+          }
+      expect(response).to be_success
+    end
+
+    it 'should add new employee to database' do
+      expect{
+        post :create, employee: attributes_for(:employee)
+      }.to change(Employee, :count).by(1)
+    end
+  end
 end
