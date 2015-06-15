@@ -7,7 +7,7 @@ gem 'rails', '4.1.0'
 gem 'angular-rails-templates'
 gem 'bower-rails'
 gem 'active_model_serializers'
-gem 'bootstrap-sass', '~> 3.3.0'
+#gem 'bootstrap-sass', '~> 3.3.0'
 gem 'ng-rails-csrf'
 gem 'pry'
 gem 'pg'
@@ -47,6 +47,8 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'jasmine-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :test do

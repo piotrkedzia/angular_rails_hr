@@ -1,0 +1,10 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "restangular": "latest",
+    "angular-bootstrap": "latest",
+    "angular-mocks": "latest"
+  }
+}

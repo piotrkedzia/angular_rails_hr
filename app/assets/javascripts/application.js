@@ -7,7 +7,7 @@
 
 
 //= require angular-bootstrap
-//= require bootstrap-sprockets
+// require bootstrap-sprockets
 
 //= require ng-rails-csrf
 
