@@ -1,4 +1,4 @@
-@app = angular.module('app', [
+@app = angular.module('ordersmaker', [
   'restangular'
   'templates'
   'ng-rails-csrf'
