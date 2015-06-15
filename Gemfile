@@ -7,12 +7,10 @@ gem 'rails', '4.1.0'
 gem 'angular-rails-templates'
 gem 'bower-rails'
 gem 'active_model_serializers'
-#gem 'bootstrap-sass', '~> 3.3.0'
 gem 'ng-rails-csrf'
 gem 'pry'
 gem 'pg'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'foreman'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,4 +52,10 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+end
+
+group :production, :staging do
+  gem 'rails_12factor'
+  gem 'rails_stdout_logging'
+  gem 'rails_serve_static_assets'
 end
