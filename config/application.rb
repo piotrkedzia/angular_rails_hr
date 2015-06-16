@@ -26,5 +26,7 @@ module AngularRailsHr
     config.assets.paths << Rails.root.join("vendor", "assets", "bower_components")
 
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
+
+    config.secret_key_base = Figaro.env.secret_key_base
   end
 end
