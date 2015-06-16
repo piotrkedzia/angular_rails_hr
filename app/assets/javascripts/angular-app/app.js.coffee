@@ -1,15 +1,25 @@
 @app = angular.module('ordersmaker', [
-  'restangular'
+  'ngRoute'
   'templates'
   'ng-rails-csrf'
+  'controllers'
 ])
 
-# for compatibility with Rails CSRF protection
-
-@app.config([
-  '$httpProvider', ($httpProvider)->
-    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+@app.config([ '$routeProvider',
+  ($routeProvider)->
+    $routeProvider
+      .when('/',
+        templateUrl: "customers/index.html"
+        controller: 'CustomersController'
+      )
 ])
+
+controllers = angular.module('controllers',[])
+controllers.controller("CustomersController", ['$scope',
+  ($scope)->
+    $scope.title = "Hello world"
+])
+
 
 @app.run(->
   console.log 'angular app running'
