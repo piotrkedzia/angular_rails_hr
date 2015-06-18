@@ -1,14 +1,23 @@
 <div class="modal-header">
-  <h4 class="modal-title">Edit Employee</h4>
+  <h4 class="modal-title">Edit Customer</h4>
 </div>
 
 <div class="modal-body">
-  <form name="" ng-submit="submitEmployee(employee)">
+  <form name="" ng-submit="submitCustomer(customer)">
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12">
-          <label>Name<span class="required"> required</span></label>
-          <input class="form-control" ng-model="employee.name">
+          <label>First name<span class="required"> required</span></label>
+          <input class="form-control" ng-model="customer.first_name">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12">
+          <label>Last name<span class="required"> required</span></label>
+          <input class="form-control" ng-model="customer.last_name">
         </div>
       </div>
     </div>
@@ -17,7 +26,7 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Email<span class="required"> required</span></label>
-          <input class="form-control" ng-model="employee.email">
+          <input class="form-control" ng-model="customer.email">
         </div>
       </div>
     </div>
@@ -25,17 +34,8 @@
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12">
-          <label>SSN<span class="required"> required</span></label>
-          <input class="form-control" ng-model="employee.ssn">
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="row">
-        <div class="col-xs-12">
-          <label>Salary<span class="required"> required</span></label>
-          <input class="form-control" ng-model="employee.salary">
+          <label>Phone number<span class="required"> required</span></label>
+          <input class="form-control" ng-model="customer.phone_number">
         </div>
       </div>
     </div>

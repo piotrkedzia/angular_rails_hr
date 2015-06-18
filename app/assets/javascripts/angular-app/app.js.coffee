@@ -2,22 +2,17 @@
   'ngRoute'
   'templates'
   'ng-rails-csrf'
-  'controllers'
+  'restangular'
+  'ui.bootstrap'
 ])
 
 @app.config([ '$routeProvider',
   ($routeProvider)->
     $routeProvider
       .when('/',
-        templateUrl: "customers/index.html"
-        controller: 'CustomersController'
+        templateUrl: "customer/index.html"
+        controller: 'CustomerListCtrl'
       )
-])
-
-controllers = angular.module('controllers',[])
-controllers.controller("CustomersController", ['$scope',
-  ($scope)->
-    $scope.title = "Hello world"
 ])
 
 

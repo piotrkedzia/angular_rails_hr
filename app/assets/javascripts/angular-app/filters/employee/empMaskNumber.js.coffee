@@ -1,4 +1,4 @@
-angular.module('app.employeeApp').filter('empMaskNumber', ()->
+angular.module('ordersmaker').filter('empMaskNumber', ()->
   (value, nonMaskLength) ->
     if value?
       maskLength = value.length - nonMaskLength - 1
