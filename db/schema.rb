@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150616220340) do
     t.string   "email"
     t.integer  "phone_number"
     t.integer  "fax_number"
-    t.text     "adress"
+    t.text     "address"
     t.string   "zip_code"
     t.string   "city"
     t.string   "www"
