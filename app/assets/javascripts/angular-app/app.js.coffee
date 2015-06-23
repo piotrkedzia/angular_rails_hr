@@ -15,6 +15,15 @@
       )
 ])
 
+@app.config([ '$routeProvider',
+  ($routeProvider)->
+    $routeProvider
+      .when('/products',
+        templateUrl: "product/index.html"
+        controller: 'ProductListCtrl'
+      )
+])
+
 
 @app.run(->
   console.log 'angular app running'
