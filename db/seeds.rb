@@ -9,6 +9,16 @@ Employee.create(name: "MacGyver", email: "test@example.com", ssn: "555-55-5555",
 Employee.create(name: "Calhoun Tubbs", email: "test2@example.com", ssn: "123-45-6789", salary: 60000)
 Employee.create(name: "John Rambo", email: "john@rambo.com", ssn: "232-11-2321", salary: 432000000)
 
+Product.create(name: "Coke", price:1.00, description:"Liquid soda", profit:0.2 )
+
+10.times do
+    Product.create!(
+        name: Faker::Commerce.product_name,
+        price: Faker::Commerce.price,
+        description: Faker::Lorem.sentence,
+        profit: Faker::Commerce.price
+    )
+end
 
 20.times do
   Customer.create!(
