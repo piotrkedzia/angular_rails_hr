@@ -33,7 +33,10 @@ class Api::CustomersController < ApplicationController
       :first_name,
       :last_name,
       :email,
-      :phone_number
+      :phone_number,
+      :address,
+      :zip_code,
+      :city
     ]
     params.require(:customer).permit(attributes)
   end
