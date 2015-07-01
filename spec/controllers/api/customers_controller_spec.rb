@@ -13,7 +13,7 @@ describe Api::CustomersController do
       expect( response.status ).to eq 200
     end
 
-    it "contains current_week fields" do
+    it "contains current fields" do
       expect(@json_response.first.keys).to eq(customer_keys)
     end
   end
