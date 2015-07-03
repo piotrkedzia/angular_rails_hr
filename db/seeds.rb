@@ -29,11 +29,11 @@ end
     email: Faker::Internet.email,
     phone_number: Faker::Number.number(9),
     fax_number: Faker::Number.number(9),
-    adress: Faker::Address.street_address,
+    address: Faker::Address.street_address,
     zip_code: Faker::Address.zip,
     city: Faker::Address.city,
     www: Faker::Company.logo,
     note: Faker::Lorem.sentence,
-    discount: Faker::Number.number(2)
+    discount: Faker::Number.number(1).to_f / 10
   )
 end
