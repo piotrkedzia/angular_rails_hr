@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'faker'
 gem 'devise'
 gem 'rabl'
+gem 'binding_of_caller'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,4 +64,8 @@ group :production, :staging do
   gem 'rails_12factor'
   gem 'rails_stdout_logging'
   gem 'rails_serve_static_assets'
+end
+
+group :development do
+  gem 'better_errors'
 end
