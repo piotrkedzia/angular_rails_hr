@@ -3,21 +3,42 @@
 </div>
 
 <div class="modal-body">
-  <form name="" ng-submit="submitProduct(product)">
+  <form name="eProd" ng-submit="submitProduct(product)">
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12">
           <label>Name</label>
-          <input class="form-control" ng-model="product.name" required>
+          <input class="form-control" name="pName" ng-model="product.name" required minlength="3">
+          <div class="error"
+               ng-show="eProd.pName.$dirty && eProd.pName.$invalid">
+            <span class="help-block"
+                  ng-show="eProd.pName.$error.required">
+                  A product name is required.
+            </span>
+            <span class="help-inline"
+                  ng-show="eProd.pName.$error.minlength">
+                  A product name is required to be at least 3 characters.
+            </span>
+          </div>
+        </div>
         </div>
       </div>
-    </div>
 
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12">
           <label>Description</label>
-          <input class="form-control" ng-model="product.description" required>
+          <input class="form-control" name="pDesc" ng-model="product.description" required>
+           <div class="error"
+               ng-show="eProd.pDesc.$dirty && eProd.pDesc.$invalid">
+            <span class="help-block"
+                  ng-show="eProd.pDesc.$error.required">
+                  A product description is required.
+            </span>
+            <span class="help-inline"
+                  ng-show="eProd.pDesc.$error.minlength">
+                  A product description is required to be at least 3 characters.
+            </span>
         </div>
       </div>
     </div>
@@ -26,7 +47,13 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Price</label>
-          <input type="number" step="any" class="form-control" ng-model="product.price" required>
+          <input type="number" step="any" name="pPrice" class="form-control" ng-model="product.price" required min="0">
+           <div class="error"
+               ng-show="eProd.pPrice.$dirty && eProd.pPrice.$invalid">
+            <span class="help-block"
+                  ng-show="eProd.pPrice.$error.required">
+                  A price above 0 is required
+            </span>
         </div>
       </div>
     </div>
@@ -35,7 +62,15 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Profit</label>
-          <input type="number" step="any" class="form-control" ng-model="product.profit" required>
+          <input type="number" step="any" name="pProfit" class="form-control" ng-model="product.profit" required
+          min="0">
+           <div class="error"
+               ng-show="eProd.pProfit.$dirty && eProd.pProfit.$invalid">
+            <span class="help-block"
+                  ng-show="eProd.pProfit.$error.required">
+                  A profit above 0 is required
+            </span>
+         
         </div>
       </div>
     </div>
@@ -45,4 +80,5 @@
       <button type="submit" class="btn btn-primary">Save Changes</button>
     </div>
   </form>
+</div>
 </div>

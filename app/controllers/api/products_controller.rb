@@ -15,7 +15,8 @@ class Api::ProductsController < ApplicationController
     if product.update(product_params)
       render json: product
     else
-      render json: product.errors.messages, status: :bad_request
+      #render json: product.errors.messages, status: :bad_request
+      respond_with(@product, :location => products_url)
     end
   end
 
@@ -24,7 +25,7 @@ class Api::ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: product.errors.messages, status: :bad_request
+      respond_with(@product, :location => products_url)
     end
   end
 
