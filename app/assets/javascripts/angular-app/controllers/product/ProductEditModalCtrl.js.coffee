@@ -8,30 +8,25 @@ angular.module('ordersmaker').controller('ProductEditModalCtrl', [
     $scope.submitProduct = (product) ->
       error
       success
-      debugger
-      if product.id?
-        product.put().then(
-          $modalInstance.close('saved')
+      if product.id?.length and product.profit?.length and product.description?.length and product.price?.length and product.profit?.length
+        product.put().then(  
           success = (result) ->
             $scope.product.unshift(result);
             return $scope.product = {};
-      
-
-          error = (result) ->
-            return angular.forEach result.data.errors, (errors, field) ->
-              $scope.yourForm[field].$setValidity 'server', false
-              return $scope.errors[field] = errors.join(', ')
+            $modalInstance.close('saved')
+            console.log 'submit product'
         )
       else
-        Restangular.setBaseUrl("/api")
-        baseProducts = Restangular.all('products')
-        baseProducts.post(product).then(
-          $modalInstance.close('created')
-        )
+        error = (result) ->
+          return angular.forEach result.data.errors, (errors, field) ->
+            $scope.eProd[field].$setValidity 'server', false
+            return $scope.errors[field] = errors.join(', ')
+            Restangular.setBaseUrl("/api")
+            baseProducts = Restangular.all('products')
+            baseProducts.post(product).then(
+              $modalInstance.close('created')
+            )
       
-
-
-      console.log 'submit product'
 
     $scope.cancel = ->
       $modalInstance.dismiss('cancel')

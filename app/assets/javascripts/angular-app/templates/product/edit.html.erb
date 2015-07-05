@@ -8,12 +8,12 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Name</label>
-          <input class="form-control" name="pName" ng-model="product.name" required minlength="3">
+          <input class="form-control" name="pName" ng-model="product.name" ng-minlength=3 server-error />
           <div class="error"
                ng-show="eProd.pName.$dirty && eProd.pName.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pName.$error.required">
-                  A product name is required.
+                  ng-show="eProd.pName.$error.$error.server">
+                  {{errors.pName}}
             </span>
             <span class="help-inline"
                   ng-show="eProd.pName.$error.minlength">
@@ -28,12 +28,12 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Description</label>
-          <input class="form-control" name="pDesc" ng-model="product.description" required>
+          <input class="form-control" name="pDesc" ng-model="product.description" server-error />
            <div class="error"
                ng-show="eProd.pDesc.$dirty && eProd.pDesc.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pDesc.$error.required">
-                  A product description is required.
+                  ng-show="eProd.pDesc.$error.server">
+                  {{errors.pDesc}}
             </span>
             <span class="help-inline"
                   ng-show="eProd.pDesc.$error.minlength">
@@ -47,12 +47,12 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Price</label>
-          <input type="number" step="any" name="pPrice" class="form-control" ng-model="product.price" required min="0">
+          <input type="number" step="any" name="pPrice" class="form-control" ng-model="product.price" ng-minlength="0" server-error />
            <div class="error"
                ng-show="eProd.pPrice.$dirty && eProd.pPrice.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pPrice.$error.required">
-                  A price above 0 is required
+                  ng-show="eProd.pPrice.$error.server">
+                  {{errors.pPrice}}
             </span>
         </div>
       </div>
@@ -62,13 +62,13 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Profit</label>
-          <input type="number" step="any" name="pProfit" class="form-control" ng-model="product.profit" required
-          min="0">
+          <input type="number" step="any" name="pProfit" class="form-control" ng-model="product.profit" 
+          ng-minlength="0" ng-maxlength=3 server-error />
            <div class="error"
                ng-show="eProd.pProfit.$dirty && eProd.pProfit.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pProfit.$error.required">
-                  A profit above 0 is required
+                  ng-show="eProd.pProfit.$error.server">
+                  {{errors.pProfit}}
             </span>
          
         </div>
