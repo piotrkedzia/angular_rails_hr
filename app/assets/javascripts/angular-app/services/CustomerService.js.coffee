@@ -7,6 +7,14 @@ angular.module('ordersmaker').factory('CustomerService', [
     Restangular.extendModel(model, (obj) ->
       angular.extend(obj, Customer)
     )
+    baseCustomers = Restangular.all('customers')
 
-    list: () -> Restangular.all(model).getList()
+    list: () ->
+      Restangular.all(model).getList()
+
+    create: (customer) ->
+      baseCustomers.post(customer)
+
+    update: (customer) ->
+      customer.put()
 ])
