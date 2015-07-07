@@ -13,19 +13,19 @@ class Api::ProductsController < ApplicationController
     product = Product.find(params[:id])
 
     if product.update(product_params)
-      render json: product
+      render json: product, status: 200
     else
       #render json: product.errors.messages, status: :bad_request
-      respond_with(@product, :location => products_url)
+      render json: {errors: product.errors}, status: 422
     end
   end
 
   def create
     product = Product.new(product_params)
     if product.save
-      render json: product
+      render json: product, status: 200
     else
-      respond_with(@product, :location => products_url)
+      render json: {errors: product.errors}, status: 422
     end
   end
 
