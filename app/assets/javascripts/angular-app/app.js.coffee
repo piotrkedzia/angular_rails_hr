@@ -8,11 +8,9 @@
 
 @app.config([ '$routeProvider',
   ($routeProvider)->
-    $routeProvider
-      .when('/',
-        templateUrl: "customer/index.html"
-        controller: 'CustomerListCtrl'
-      )
+    $routeProvider.when('/', templateUrl: "customer/index.html", controller: 'CustomerListCtrl')
+    $routeProvider.when('/orders', templateUrl: "order/index.html", controller: 'OrderListCtrl')
+
 ])
 
 @app.config([ '$routeProvider',
