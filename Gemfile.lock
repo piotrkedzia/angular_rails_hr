@@ -246,7 +246,6 @@ DEPENDENCIES
   rails_12factor
   rails_serve_static_assets
   rails_stdout_logging
-  responders
   rspec-rails (~> 3.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

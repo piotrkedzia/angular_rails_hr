@@ -1,23 +1,13 @@
-angular.module('ordersmaker').controller("productValidate", [
-  '$scope', 'ProductService', '$modal',
-  ($scope, ProductService, $modal)->
-
-    $scope.editProduct = (product) ->
-      modalInstance = $modal.open({
-        templateUrl: 'product/edit.html',
-        controller: 'ProductEditModalCtrl'
-        size: 'lg'
-        resolve:
-          product: ->
-            product
-      })
-
-      modalInstance.result.then(->
-        console.log 'edit closed'
-      )
-
-    ProductService.list().then((products) ->
-      $scope.products= products
-      console.dir products
-    )
-])
+angular.module('ordersmaker').directive('serverError', function(){
+  return {
+    restrict: 'A',
+    require: '?ngModel',
+    link: function(scope,element,attrs,ctrl){
+      return element.on('change keyup', function(){
+        return scope.$apply(function(){
+          return ctrl.$setValidity('server', true);
+        });
+      });
+    }
+  };
+});
