@@ -3,21 +3,17 @@
 </div>
 
 <div class="modal-body">
-  <form name="eProd" ng-submit="submitProduct(product)">
+  <form name="eProd" ng-submit="submitProduct(product)" novalidate>
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12">
           <label>Name</label>
-          <input class="form-control" name="pName" ng-model="product.name" ng-minlength=3 server-error />
+          <input class="form-control" name="name" ng-model="product.name" ng-minlength=3 server-error />
           <div class="error"
-               ng-show="eProd.pName.$dirty && eProd.pName.$invalid">
+               ng-show="eProd.name.$dirty && eProd.name.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pName.$error.$error.server">
-                  {{errors.pName}}
-            </span>
-            <span class="help-inline"
-                  ng-show="eProd.pName.$error.minlength">
-                  A product name is required to be at least 3 characters.
+                  ng-show="eProd.name.$error.server">
+                  {{errors.name}}
             </span>
           </div>
         </div>
@@ -28,16 +24,12 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Description</label>
-          <input class="form-control" name="pDesc" ng-model="product.description" server-error />
+          <input class="form-control" name="description" ng-model="product.description" server-error />
            <div class="error"
-               ng-show="eProd.pDesc.$dirty && eProd.pDesc.$invalid">
+               ng-show="eProd.description.$dirty && eProd.description.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pDesc.$error.server">
-                  {{errors.pDesc}}
-            </span>
-            <span class="help-inline"
-                  ng-show="eProd.pDesc.$error.minlength">
-                  A product description is required to be at least 3 characters.
+                  ng-show="eProd.description.$error.server">
+                  {{errors.description}}
             </span>
         </div>
       </div>
@@ -47,12 +39,12 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Price</label>
-          <input type="number" step="any" name="pPrice" class="form-control" ng-model="product.price" ng-minlength="0" server-error />
+          <input type="number" step="any" name="price" class="form-control" ng-model="product.price" ng-minlength="0" server-error />
            <div class="error"
-               ng-show="eProd.pPrice.$dirty && eProd.pPrice.$invalid">
+               ng-show="eProd.price.$dirty && eProd.price.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pPrice.$error.server">
-                  {{errors.pPrice}}
+                  ng-show="eProd.price.$error.server">
+                  {{errors.price}}
             </span>
         </div>
       </div>
@@ -62,13 +54,13 @@
       <div class="row">
         <div class="col-xs-12">
           <label>Profit</label>
-          <input type="number" step="any" name="pProfit" class="form-control" ng-model="product.profit" 
+          <input type="number" step="any" name="profit" class="form-control" ng-model="product.profit" 
           ng-minlength="0" ng-maxlength=3 server-error />
            <div class="error"
-               ng-show="eProd.pProfit.$dirty && eProd.pProfit.$invalid">
+               ng-show="eProd.profit.$dirty && eProd.profit.$invalid">
             <span class="help-block"
-                  ng-show="eProd.pProfit.$error.server">
-                  {{errors.pProfit}}
+                  ng-show="eProd.profit.$error.server">
+                  {{errors.profit}}
             </span>
          
         </div>
