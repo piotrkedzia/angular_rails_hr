@@ -32,3 +32,4 @@ local.local.*
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+angular-app-symlink

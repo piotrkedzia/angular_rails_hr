@@ -12,7 +12,8 @@ angular.module('ordersmaker').controller("CustomerListCtrl", [
             customer
       })
 
-      modalInstance.result.then(->
+      modalInstance.result.then( (result) ->
+        console.log result
         console.log 'edit closed'
       )
 

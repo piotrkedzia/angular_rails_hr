@@ -1,19 +1,19 @@
 angular.module('ordersmaker').controller('CustomerEditModalCtrl', [
-  '$scope', '$modalInstance', 'customer', 'Restangular', ($scope, $modalInstance, customer, Restangular)->
+  '$scope', '$modalInstance', 'customer', 'CustomerService', ($scope, $modalInstance, customer, CustomerService)->
 
     $scope.customer = customer
 
     $scope.submitCustomer = (customer) ->
+
       if customer.id?
-        customer.put().then(
+        CustomerService.update(customer).then(
           $modalInstance.close('saved')
         )
       else
-        Restangular.setBaseUrl("/api")
-        baseCustomers = Restangular.all('customers')
-        baseCustomers.post(customer).then(
-          $modalInstance.close('created')
+        CustomerService.create(customer).then(() ->
+          $modalInstance.close(customer)
         )
+
       console.log 'submit customer'
 
     $scope.cancel = ->
