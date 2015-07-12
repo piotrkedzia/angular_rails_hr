@@ -2,14 +2,16 @@
   %h4.modal-title Edit Customer
 
 .modal-body
-  %form{ name:"", ng_submit:"submitCustomer(customer)" }
+  %form{ name:"form", ng_submit:"submitCustomer(customer)", novalidate: true }
     .form-group
       .row
         .col-xs-12
           %label
             First name
             %span.required require
-          %input.form-control{ ng_model:"customer.first_name" }
+          %input.form-control{ type:"text", name:"first_name", ng_model:"customer.first_name", 'server-error'=>true }
+          .errors{ ng_show:"form.first_name.$dirty && form.first_name.$invalid" }
+            %span{ ng_show:"form.first_name.$error.server" } {{ errors.first_name }}
 
     .form-group
       .row
@@ -25,7 +27,7 @@
           %label
             Email
             %span.required require
-          %input.form-control{ ng_model:"customer.email" }
+          %input.form-control{ ng_model:"customer.email", type:"text", name:"email", 'server-error'=>true }
 
     .form-group
       .row
