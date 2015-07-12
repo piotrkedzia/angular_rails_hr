@@ -1,0 +1,66 @@
+.modal-header
+  %h4.modal-title Edit Customer
+
+.modal-body
+  %form{ name:"", ng_submit:"submitCustomer(customer)" }
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            First name
+            %span.required require
+          %input.form-control{ ng_model:"customer.first_name" }
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Last name
+            %span.required require
+          %input.form-control{ ng_model:"customer.last_name" }
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Email
+            %span.required require
+          %input.form-control{ ng_model:"customer.email" }
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Phone number
+            %span.required required
+          %input.form-control{ ng_model:"customer.phone_number" }
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Address
+            %span.required required
+          %input.form-control{ ng_model:"customer.address" }
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Zip
+            %span.required require
+          %input.form-control{ ng_model:"customer.zip_code" }
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            City
+            %span.required require
+          %input.form-control{ ng_model:"customer.city" }
+
+    .modal-footer
+      %button.btn.btn-default{ type:"button", data_dismiss:"modal", ng_click:"cancel()" }
+        Cancel
+      %button.btn.btn-primary{ type:"submit" }
+        Save Changes

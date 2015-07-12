@@ -1,7 +1,6 @@
 %h1 All orders
 
 %ul
-  %li First order
-  %li Second order
-  %li Last order
+  %li{ ng_repeat: "order in orders" }
+    {{ order.description }}
 
