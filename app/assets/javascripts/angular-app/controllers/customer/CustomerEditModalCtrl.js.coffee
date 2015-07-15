@@ -8,6 +8,7 @@ angular.module('ordersmaker').controller('CustomerEditModalCtrl', [
       $modalInstance.dismiss('cancel')
 
     $scope.submitCustomer = (customer) ->
+      $scope.errors = {}
       success = (result) ->
         $modalInstance.close('saved')
 
