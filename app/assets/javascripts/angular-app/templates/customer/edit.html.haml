@@ -8,7 +8,7 @@
         .col-xs-12
           %label
             First name
-            %span.required require
+            %span.required *
           %input.form-control{ type:"text", name:"first_name", ng_model:"customer.first_name", 'server-error'=>true }
           .bg-danger{ ng_show:"form.first_name.$invalid" }
             %span{ ng_show:"form.first_name.$error.server" } {{ errors.first_name }}
@@ -18,10 +18,19 @@
         .col-xs-12
           %label
             Last name
-            %span.required require
+            %span.required *
           %input.form-control{ type:"text", name:"last_name", ng_model:"customer.last_name", 'server-error'=>true }
           .bg-danger{ ng_show:"form.last_name.$invalid" }
             %span{ ng_show:"form.last_name.$error.server" } {{ errors.last_name }}
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Description
+          %input.form-control{ type:"text", name:"description", ng_model:"customer.description", 'server-error'=>true }
+          .bg-danger{ ng_show:"form.description.$invalid" }
+            %span{ ng_show:"form.description.$error.server" } {{ errors.description }}
 
 
     .form-group
@@ -29,21 +38,28 @@
         .col-xs-12
           %label
             Email
-            %span.required require
+            %span.required *
           %input.form-control{ ng_model:"customer.email", type:"text", name:"email", 'server-error'=>true }
           .bg-danger{ ng_show:"form.email.$invalid" }
             %span{ ng_show:"form.email.$error.server" } {{ errors.email }}
-
 
     .form-group
       .row
         .col-xs-12
           %label
             Phone number
-            %span.required required
           %input.form-control{ type:"text", name:"phone_number", ng_model:"customer.phone_number", 'server-error'=>true }
           .bg-danger{ ng_show:"form.phone_number.$invalid" }
             %span{ ng_show:"form.phone_number.$error.server" } {{ errors.phone_number }}
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Tax identification number
+          %input.form-control{ type:"text", name:"tax_identification_number", ng_model:"customer.tax_identification_number", 'server-error'=>true }
+          .bg-danger{ ng_show:"form.tax_identification_number.$invalid" }
+            %span{ ng_show:"form.tax_identification_number.$error.server" } {{ errors.tax_identification_number }}
 
 
     .form-group
@@ -51,7 +67,7 @@
         .col-xs-12
           %label
             Address
-            %span.required required
+            %span.required *
           %input.form-control{ type:"text", name:"address", ng_model:"customer.address", 'server-error'=>true }
           .bg-danger{ ng_show:"form.address.$invalid" }
             %span{ ng_show:"form.address.$error.server" } {{ errors.address }}
@@ -62,7 +78,7 @@
         .col-xs-12
           %label
             Zip
-            %span.required require
+            %span.required *
           %input.form-control{ type:"text", name:"zip_code", ng_model:"customer.zip_code", 'server-error'=>true}
           .bg-danger{ ng_show:"form.zip_code.$invalid" }
             %span{ ng_show:"form.zip_code.$error.server" } {{ errors.zip_code }}
@@ -73,10 +89,39 @@
         .col-xs-12
           %label
             City
-            %span.required require
+            %span.required *
           %input.form-control{ type:"text", name:"city", ng_model:"customer.city", 'server-error'=>true}
           .bg-danger{ ng_show:"form.city.$invalid" }
             %span{ ng_show:"form.city.$error.server" } {{ errors.city }}
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            Discount
+          %input.form-control{ type:"text", name:"discount", ng_model:"customer.discount", 'server-error'=>true}
+          .bg-danger{ ng_show:"form.discount.$invalid" }
+            %span{ ng_show:"form.discount.$error.server" } {{ errors.discount }}
+
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            www
+          %input.form-control{ type:"text", name:"www", ng_model:"customer.www", 'server-error'=>true}
+          .bg-danger{ ng_show:"form.www.$invalid" }
+            %span{ ng_show:"form.www.$error.server" } {{ errors.www }}
+
+    .form-group
+      .row
+        .col-xs-12
+          %label
+            note
+          %input.form-control{ type:"text", name:"note", ng_model:"customer.note", 'server-error'=>true}
+          .bg-danger{ ng_show:"form.note.$invalid" }
+            %span{ ng_show:"form.note.$error.server" } {{ errors.note }}
+
 
 
     .modal-footer

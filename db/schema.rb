@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150703180412) do
     t.string   "city"
     t.string   "www"
     t.text     "note"
-    t.float    "discount",                  default: 0.0
+    t.float    "discount", default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "order_id"
