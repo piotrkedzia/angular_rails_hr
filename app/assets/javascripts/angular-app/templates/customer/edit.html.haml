@@ -10,7 +10,7 @@
             First name
             %span.required require
           %input.form-control{ type:"text", name:"first_name", ng_model:"customer.first_name", 'server-error'=>true }
-          .errors{ ng_show:"form.first_name.$dirty && form.first_name.$invalid" }
+          .bg-danger{ ng_show:"form.first_name.$invalid" }
             %span{ ng_show:"form.first_name.$error.server" } {{ errors.first_name }}
 
     .form-group
@@ -20,7 +20,7 @@
             Last name
             %span.required require
           %input.form-control{ type:"text", name:"last_name", ng_model:"customer.last_name", 'server-error'=>true }
-          .errors{ ng_show:"form.last_name.$dirty && form.last_name.$invalid" }
+          .bg-danger{ ng_show:"form.last_name.$invalid" }
             %span{ ng_show:"form.last_name.$error.server" } {{ errors.last_name }}
 
 
@@ -31,7 +31,7 @@
             Email
             %span.required require
           %input.form-control{ ng_model:"customer.email", type:"text", name:"email", 'server-error'=>true }
-          .errors{ ng_show:"form.email.$dirty && form.email.$invalid" }
+          .bg-danger{ ng_show:"form.email.$invalid" }
             %span{ ng_show:"form.email.$error.server" } {{ errors.email }}
 
 
@@ -42,7 +42,7 @@
             Phone number
             %span.required required
           %input.form-control{ type:"text", name:"phone_number", ng_model:"customer.phone_number", 'server-error'=>true }
-          .errors{ ng_show:"form.phone_number.$dirty && form.phone_number.$invalid" }
+          .bg-danger{ ng_show:"form.phone_number.$invalid" }
             %span{ ng_show:"form.phone_number.$error.server" } {{ errors.phone_number }}
 
 
@@ -53,7 +53,7 @@
             Address
             %span.required required
           %input.form-control{ type:"text", name:"address", ng_model:"customer.address", 'server-error'=>true }
-          .errors{ ng_show:"form.address.$dirty && form.address.$invalid" }
+          .bg-danger{ ng_show:"form.address.$invalid" }
             %span{ ng_show:"form.address.$error.server" } {{ errors.address }}
 
 
@@ -64,7 +64,7 @@
             Zip
             %span.required require
           %input.form-control{ type:"text", name:"zip_code", ng_model:"customer.zip_code", 'server-error'=>true}
-          .errors{ ng_show:"form.zip_code.$dirty && form.zip_code.$invalid" }
+          .bg-danger{ ng_show:"form.zip_code.$invalid" }
             %span{ ng_show:"form.zip_code.$error.server" } {{ errors.zip_code }}
 
 
@@ -75,7 +75,7 @@
             City
             %span.required require
           %input.form-control{ type:"text", name:"city", ng_model:"customer.city", 'server-error'=>true}
-          .errors{ ng_show:"form.city.$dirty && form.city.$invalid" }
+          .bg-danger{ ng_show:"form.city.$invalid" }
             %span{ ng_show:"form.city.$error.server" } {{ errors.city }}
 
 

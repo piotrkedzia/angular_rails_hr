@@ -14,7 +14,7 @@ class Api::CustomersController < ApplicationController
     if customer.update(customer_params)
       render json: customer
     else
-      render json: { errors: customer.errors }, status: 422
+      render json: { errors: customer.errors }, status: :unprocessable_entity
     end
   end
 
@@ -23,7 +23,7 @@ class Api::CustomersController < ApplicationController
     if customer.save
       render json: customer
     else
-      render json: { errors: customer.errors }, status: :bad_request
+      render json: { errors: customer.errors }, status: :unprocessable_entity
     end
   end
 
