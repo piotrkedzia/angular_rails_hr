@@ -8,20 +8,12 @@
 
 @app.config([ '$routeProvider',
   ($routeProvider)->
-    $routeProvider.when('/', templateUrl: "customer/index.html", controller: 'CustomerListCtrl')
+    $routeProvider.when('/customers', templateUrl: "customer/index.html", controller: 'CustomerListCtrl')
     $routeProvider.when('/orders', templateUrl: "order/index.html", controller: 'OrderListCtrl')
+    $routeProvider.when('/products', templateUrl: "product/index.html", controller: 'ProductListCtrl')
+    $routeProvider.when('/', templateUrl: "main/show.html", controller: 'MainCtrl')
 
 ])
-
-@app.config([ '$routeProvider',
-  ($routeProvider)->
-    $routeProvider
-      .when('/products',
-        templateUrl: "product/index.html"
-        controller: 'ProductListCtrl'
-      )
-])
-
 
 @app.run(->
   console.log 'angular app running'
