@@ -30,6 +30,7 @@ class Api::CustomersController < ApplicationController
   private
   def customer_params
     attributes = [
+      :id,
       :first_name,
       :last_name,
       :description,
