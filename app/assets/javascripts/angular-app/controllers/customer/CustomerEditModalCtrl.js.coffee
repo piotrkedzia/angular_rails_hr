@@ -2,12 +2,16 @@ angular.module('ordersmaker').controller('CustomerEditModalCtrl', [
   '$scope', '$modalInstance', 'customer', 'CustomerService',
   ($scope, $modalInstance, customer, CustomerService)->
 
-    $scope.customer = customer
+    if customer?
+      $scope.customer = customer
+    else
+      $scope.customer = { first_name: "" }
 
     $scope.cancel = ->
       $modalInstance.dismiss('cancel')
 
     $scope.submitCustomer = (customer) ->
+      $scope.errors = {}
       success = (result) ->
         $modalInstance.close('saved')
 
@@ -16,6 +20,7 @@ angular.module('ordersmaker').controller('CustomerEditModalCtrl', [
           $scope.form[field].$setValidity('server', false)
 
           $scope.errors[field] = errors.join(', ')
+
 
       if customer.id?
         CustomerService.update(customer).then(success, error)
