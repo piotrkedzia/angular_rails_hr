@@ -31,3 +31,12 @@ end
     discount: Faker::Number.number(1).to_f / 10
   )
 end
+
+# Completed/Finished orders
+30.times do
+  Order.create!(
+    description: Faker::Lorem.sentence,
+    discount: Faker::Number.number(1).to_f / 10,
+    confirmed_date: Faker::Date.forward(43)
+  )
+end
