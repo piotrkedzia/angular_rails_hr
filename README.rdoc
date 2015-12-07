@@ -1,28 +1,32 @@
-== README
+== Order Creator app written in Rails 4 and AngularJS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an early beta port of my desktop app (written in C#/WinForms). App can create orders and manage them (like simple invoices). App is written in Ruby/Rails 4 and CoffeeScript/AngularJS. Orders support CRUD operations. All task operations are done on the client side and synchronized to the server. The Rails backend servs a RESTful API used by AngularJS SPA.
 
-Things you may want to cover:
+Check out the demo at: https://orders-maker.herokuapp.com/#/products
 
-* Ruby version
+== Purpose
 
-* System dependencies
+I'm writing this app for training purpose. I was just curious how much time would take me rewriting C#/WinForms desktop app to Ruby/Rails/AngularJS web app. Now i have opportunity to write again the same application but with diferent point of view.
 
-* Configuration
+==Technologies used
 
-* Database creation
+===Frontend
+* coffee-rails
+* angular-rails-templates
+* bower-rails
+* haml
+* sass-rails
 
-* Database initialization
+===Backend
 
-* How to run the test suite
+* Ruby 2.2.2
+* Rails 4.2
+* active_model_serializers
+* figaro
+* faker
+* factory_girl
+* rabl
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
