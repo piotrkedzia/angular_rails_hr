@@ -15,11 +15,13 @@ gem 'foreman'
 gem 'figaro'
 gem 'faker'
 gem 'devise'
-gem 'rabl'
 gem 'binding_of_caller'
 gem 'pry-byebug'
 gem 'responders'
 gem 'haml'
+gem 'rabl'
+# Also add either `oj` or `yajl-ruby` as the JSON parser
+gem 'oj'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
