@@ -1,7 +1,8 @@
 require 'spec_helper'
 describe Api::CustomersController do
   let!(:customer) { create(:customer) }
-  let!(:customer_keys) { %w(id first_name last_name email phone_number address zip_code city) }
+  let!(:customer_keys) { %w(id first_name last_name description tax_identification_number email phone_number fax_number address
+ zip_code city www note discount) }
 
   describe "GET #index" do
     before do
