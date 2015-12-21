@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe Api::LineItemsController do
-# render_views
+  render_views
   before { controller.class.skip_before_filter :authenticate_api! }
   let!(:customer) { create(:customer) }
   let!(:order) { create(:order, customer_id: customer.id) }
-  let!(:order_with_line_items)
+  let!(:order_with_line_items) { create(:order_with_line_items) }
   let!(:product) { create(:product) }
 
   let(:line_item_attributes) do
