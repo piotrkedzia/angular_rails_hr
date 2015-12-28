@@ -20,8 +20,12 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :orders, defaults: { format: :json }
+    resources :orders, defaults: { format: :json } do
+      resources :line_items, defaults: { format: :json }
+    end
   end
+  
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
