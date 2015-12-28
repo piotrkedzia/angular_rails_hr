@@ -38,7 +38,7 @@ describe Api::LineItemsController do
     end
 
     it 'returns correct hash keys' do
-      json_resposne = response.body
+      json_response = JSON.parse(response.body)
       expect(json_response.keys).to eq(line_item_keys.map(&:to_s))
     end
   end
