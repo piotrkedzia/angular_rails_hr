@@ -11,13 +11,13 @@ angular.module('ordersmaker').factory('OrderService',[
 
     list: () ->
       Restangular.all(model).getList()
-      
+
     create: (order) ->
       baseOrders.post(order)
-    
+
     update: (order) ->
       order.put()
-      
+
     line_items: (order) ->
       line_items = Restangular.one(model, order.id).getList('line_items')
 ])

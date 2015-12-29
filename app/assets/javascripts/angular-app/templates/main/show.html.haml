@@ -17,6 +17,9 @@
             %th quantity
             %th price
         %tbody
+          %tr{ ng_repeat: "line_item in line_items" }
+            %td {{ line_item.notes }}
+            %td {{ line_item.value }}
           %tr
             %td BC324r
             %td 44
