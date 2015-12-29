@@ -9,12 +9,33 @@ class Api::LineItemsController < ApplicationController
 
   def create
     order = Order.find(params[:order_id])
-    line_item = order.line_items.new
+    line_item = order.line_items.build(line_item_params)
 
-    if line_item.update(line_item_params)
+    if line_item.save
       render nothing: true, status: 201
     else
-      render json: { errors: line_item.errors }
+      render json: { errors: line_item.errors }, status: 422
+    end
+  end
+  
+  def update
+    line_item = LineItem.find(params[:id])
+    line_item.update_attributes(line_item_params)
+    
+    if line_item.save
+      render nothing: true, status: 204
+    else
+      render json: { errors: line_item.errors }, status: 422
+    end
+  end
+  
+  def destroy
+    line_item = LineItem.find(params[:id])
+    
+    if line_item.destroy
+      render nothing: true, status: 204
+    else
+      render json: { errors: line_item.errors }, status: 422
     end
   end
 

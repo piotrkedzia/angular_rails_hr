@@ -57,7 +57,7 @@ describe Api::LineItemsController do
 
   describe 'PUT #update' do
     before do
-      put :update, format: :json,  order_id: order_with_line_items.id, line_item_id: order_with_line_items.line_items.first.id, line_item: line_item_attributes 
+      put :update, format: :json,  order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id, line_item: line_item_attributes 
     end
 
     it 'returns 204 code' do
@@ -65,18 +65,18 @@ describe Api::LineItemsController do
     end
 
     it 'updates the attribute in params' do
-      expect(LineItem.find(order_with_line_items.line_items.first.id).value).to be order_with_line_items.line_items.first.value
+      expect(LineItem.find(order_with_line_items.line_items.first.id).value.to_f).to be order_with_line_items.line_items.first.value.to_f
     end
   end
 
   describe 'DELETE #destroy' do
     it 'returns 204 code' do
-      delete :destroy,  format: :json, order_id: order_with_line_items.id, line_item_id: order_with_line_items.line_items.first.id
+      delete :destroy,  format: :json, order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id
       expect(response.status).to eq(204)
     end
 
     it 'decrements the amount of order line items' do
-      expect { delete :destroy,  format: :json, order_id: order_with_line_items.id, line_item_id: order_with_line_items.line_items.first.id }
+      expect { delete :destroy,  format: :json, order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id }
         .to change(LineItem, :count).by(-1)
     end
   end
