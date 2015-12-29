@@ -31,6 +31,7 @@ class Api::ProductsController < ApplicationController
 
   def product_params
     attributes = [
+      :id,
       :name,
       :description,
       :profit,

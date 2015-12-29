@@ -8,11 +8,9 @@ angular.module('ordersmaker').controller('ProductEditModalCtrl', [
       success
       $scope.errors = {}
       success = (result) ->
-            $scope.product.unshift(result);
-            return $scope.product = {};
             $modalInstance.close('saved')
             console.log 'submit product'
-      
+            return $scope.product = {};
       error = (result) ->
         angular.forEach result.data.errors, (errors, field) ->
           $scope.eProd[field].$setValidity('server', false)
