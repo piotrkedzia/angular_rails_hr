@@ -1,15 +1,16 @@
-%h1 All orders
-
-%table.table
-  %thead
-    %th fasdfasd
-    %th fasdfasd
-    %th fasdfasd
-    %th dfdafsfa
-  %tbody
-    %tr{ ng_repeat: "order in orders" }
-      %td {{ order.id }}
-      %td {{ order.description }}
-      %td {{ order.status }}
-      %td {{ order.confirmed_date  }}
+.col-xs-8
+  %h1 All orders
+  
+  %table.table
+    %thead
+      %th fasdfasd
+      %th fasdfasd
+      %th fasdfasd
+      %th dfdafsfa
+    %tbody
+      %tr{ ng_repeat: "order in orders" }
+        %td {{ order.id }}
+        %td {{ order.description }}
+        %td {{ order.status }}
+        %td {{ order.confirmed_date  }}
 

@@ -1,5 +1,5 @@
 angular.module('ordersmaker').controller('ProductEditModalCtrl', [
-  '$scope', '$modalInstance', 'product', 'Restangular', ($scope, $modalInstance, product, Restangular)->
+  '$scope', '$modalInstance', 'product', 'ProductService', ($scope, $modalInstance, product, ProductService)->
 
     $scope.product = product 
 
@@ -15,9 +15,12 @@ angular.module('ordersmaker').controller('ProductEditModalCtrl', [
         angular.forEach result.data.errors, (errors, field) ->
           $scope.eProd[field].$setValidity('server', false)
           $scope.errors[field] = errors.join(', ')
-          
-
-      product.put().then(success,error)
+      
+      if product.id?    
+        ProductService.update(product).then(success, error)
+      else
+        ProductService.create(product).then(success, error)
+        
     $scope.cancel = ->
       $modalInstance.dismiss('cancel')
 ])
