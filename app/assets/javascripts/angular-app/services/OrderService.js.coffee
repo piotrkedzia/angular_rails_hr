@@ -1,4 +1,4 @@
-angular.module('ordersmaker').factory('CustomerOrderService',[
+angular.module('ordersmaker').factory('OrderService',[
   'Restangular', 'Order', (Restangular, Order) ->
 
     model = 'orders'
@@ -11,4 +11,13 @@ angular.module('ordersmaker').factory('CustomerOrderService',[
 
     list: () ->
       Restangular.all(model).getList()
+      
+    create: (order) ->
+      baseOrders.post(order)
+    
+    update: (order) ->
+      order.put()
+      
+    line_items: (order) ->
+      line_items = Restangular.one(model, order.id).getList('line_items')
 ])
