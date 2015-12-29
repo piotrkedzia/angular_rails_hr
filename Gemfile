@@ -73,4 +73,6 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'guard'
+   gem 'guard-rspec', require: false
 end

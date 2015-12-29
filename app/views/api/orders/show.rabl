@@ -1,5 +1,5 @@
 object @order
-attribute :id, :description, :discount, :status, :profit, :confirmed_date, :completion_date, :tax
+attribute :id, :description, :discount, :status, :profit, :confirmed_date, :completion_date, :tax, :item_total
 
 child :customer do
   attribute :id, :first_name, :last_name
