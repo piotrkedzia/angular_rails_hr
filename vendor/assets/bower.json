@@ -2,7 +2,7 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap-sass": "latest",
-    "angular": "1.2.16",
+    "angular": "1.4.8",
     "restangular": "latest",
     "angular-bootstrap": "latest",
     "angular-mocks": "latest",
