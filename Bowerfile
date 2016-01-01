@@ -2,9 +2,10 @@
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
 asset 'bootstrap-sass'
-asset 'angular'
+asset 'angular', '1.2.16'
 asset 'restangular'
 asset 'angular-bootstrap'
 asset 'angular-mocks'
 asset 'angular-route'
 asset 'angular-messages'
+asset 'angu-fixed-header-table'

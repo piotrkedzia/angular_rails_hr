@@ -2,11 +2,12 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap-sass": "latest",
-    "angular": "latest",
+    "angular": "1.2.16",
     "restangular": "latest",
     "angular-bootstrap": "latest",
     "angular-mocks": "latest",
     "angular-route": "latest",
-    "angular-messages": "latest"
+    "angular-messages": "latest",
+    "angu-fixed-header-table": "latest"
   }
 }
