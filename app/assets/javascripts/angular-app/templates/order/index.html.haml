@@ -3,19 +3,17 @@
 
   %table.table
     %thead
-      %th fasdfasd
-      %th fasdfasd
+      %th order number
+      %th customer
+      %th description
       %th fasdfasd
       %th dfdafsfa
     %tbody
       %tr{ ng_repeat: "order in orders" }
         %td
-          %a{ ng_click: "fetch_line_items(order)" }
+          %a{ ng_href: "#/orders/{{ order.id }}" }
             {{ order.id }}
+        %td {{ order.customer.first_name }} {{ order.customer.last_name }}
         %td {{ order.description }}
         %td {{ order.status }}
         %td {{ order.confirmed_date  }}
-
-  %ul
-    %li{ ng_repeat: "line_item in line_items" }
-      {{ line_item.value }}

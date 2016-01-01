@@ -5,7 +5,7 @@
 //= require angular-route/angular-route
 //= require lodash
 //= require restangular
-
+//= require angu-fixed-header-table
 
 //= require angular-bootstrap
 

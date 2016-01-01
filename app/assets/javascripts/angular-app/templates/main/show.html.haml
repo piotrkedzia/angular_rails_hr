@@ -10,16 +10,13 @@
 
   .col-xs-9
     .alert.alert-warning
-      %table.table
+      %table.table{ fixed_header:"" }
         %thead
           %tr
             %th Item
             %th quantity
             %th price
         %tbody
-          %tr{ ng_repeat: "line_item in line_items" }
-            %td {{ line_item.notes }}
-            %td {{ line_item.value }}
           %tr
             %td BC324r
             %td 44
@@ -44,45 +41,20 @@
             %td BC324r
             %td 44
             %td 24.43%
-
-.row
-  .col-xs-12
-    .alert.alert-success
-      Gap between tables
 
 .row
   .col-xs-12
     .alert.alert-danger
-      %table.table
+      %table.table{ fixed_header:"" }
         %thead
           %tr
-            %th Item
-            %th quantity
+            %th item
             %th price
+            %th quantity
+            %th value
         %tbody
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-
-
+          %tr{ ng_repeat: "line_item in line_items" }
+            %td {{ line_item.product.name }}
+            %td {{ line_item.price }}
+            %td {{ line_item.quantity }}
+            %td {{ line_item.value }}

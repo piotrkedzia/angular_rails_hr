@@ -4,6 +4,7 @@
   'ng-rails-csrf'
   'restangular'
   'ui.bootstrap'
+  'anguFixedHeaderTable'
 ])
 
 @app.config([ '$routeProvider',
