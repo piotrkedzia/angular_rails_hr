@@ -26,14 +26,14 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 col-md-2 sidebar">
+    <div class="col-sm-3 col-md-2 sidebar" ng-controller="HeaderCtrl">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="#/customers">Customers<span class="sr-only">(current)</span></a></li>
-        <li><a href="#/products">Products</a></li>
-        <li><a href="#/orders">Orders</a></li>
-        <li><a href="#">Suppliers</a></li>
-        <li><a href="#">Reports</a></li>
-        <li><a href="#">Users</a></li>
+        <li ng-class="{ active: is_active('/customers')}"><a href="#/customers">Customers<span class="sr-only">(current)</span></a></li>
+        <li ng-class="{ active: is_active('/products')}"><a href="#/products">Products</a></li>
+        <li ng-class="{ active: is_active('/orders')}"><a href="#/orders">Orders</a></li>
+        <li ng-class="{ active: is_active('/suppliers')}"><a href="#">Suppliers</a></li>
+        <li ng-class="{ active: is_active('/reports')}"><a href="#">Reports</a></li>
+        <li ng-class="{ active: is_active('/users')}"><a href="#">Users</a></li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
