@@ -9,12 +9,12 @@ angular.module('ordersmaker').factory('ProductService', [
     )
     baseProducts = Restangular.all('products')
 
-    list: () -> 
+    list: () ->
       Restangular.all(model).getList()
-    
+
     create: (product) ->
       baseProducts.post(product)
-      
+
     update: (product) ->
       product.put()
 ])

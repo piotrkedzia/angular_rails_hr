@@ -1,7 +1,8 @@
 .row
   .col-xs-12
-    .alert.alert-info
-      %p Orders navigation bar
+    .panel.panel-default
+      .panel-body 
+        Orders navigation bar
 
 .row
   .col-xs-3
@@ -9,52 +10,36 @@
       %img.img-rounded{ src: "/assets/gem.jpg", style: "max-width:100%; max-height:100%" }
 
   .col-xs-9
-    .alert.alert-warning
-      %table.table{ fixed_header:"" }
-        %thead
-          %tr
-            %th Item
-            %th quantity
-            %th price
-        %tbody
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
-          %tr
-            %td BC324r
-            %td 44
-            %td 24.43%
+    %table.product-table.table.table-striped{ fixed_header:"" }
+      %thead
+        %tr
+          %th Item
+          %th price
+          %th description
+      %tbody
+        %tr{ ng_repeat: "product in products" }
+          %td {{ product.name }}
+          %td {{ product.price }}
+          %td {{ product.description }}
+          %td {{ product.profit }}
+.row
+  .col-xs-12
+    .panel.panel-primary
+      .panel-body
+        Orders navigation bar
 
 .row
   .col-xs-12
-    .alert.alert-danger
-      %table.table{ fixed_header:"" }
-        %thead
-          %tr
-            %th item
-            %th price
-            %th quantity
-            %th value
-        %tbody
-          %tr{ ng_repeat: "line_item in line_items" }
-            %td {{ line_item.product.name }}
-            %td {{ line_item.price }}
-            %td {{ line_item.quantity }}
-            %td {{ line_item.value }}
+    %table.line-item-table.table.table-striped{ fixed_header:"" }
+      %thead
+        %tr
+          %th item
+          %th price
+          %th quantity
+          %th value
+      %tbody
+        %tr{ ng_repeat: "line_item in line_items" }
+          %td {{ line_item.product.name }}
+          %td {{ line_item.price }}
+          %td {{ line_item.quantity }}
+          %td {{ line_item.value }}
