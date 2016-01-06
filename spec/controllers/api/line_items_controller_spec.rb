@@ -11,7 +11,7 @@ describe Api::LineItemsController do
   let(:line_item_attributes) do
     attributes_for(:line_item).merge(order_id: order.id, product_id: product.id)
   end
-  let(:line_item_keys) { [:id, :order_id, :product_id, :notes, :value, :quantity] }
+  let(:line_item_keys) { ["id", "order_id", "notes", "value", "quantity", "product"] }
 
   describe 'GET #index' do
     before do

@@ -6,6 +6,7 @@ angular.module('ordersmaker').controller("OrderShowCtrl", [
     OrderService.line_items(order).then((line_items) ->
       $scope.line_items = line_items
       console.dir line_items
+      CustomerService.
     )
     ProductService.list().then((products) ->
       $scope.products = products

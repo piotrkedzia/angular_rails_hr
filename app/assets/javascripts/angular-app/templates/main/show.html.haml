@@ -1,9 +1,19 @@
 .row
   .col-xs-12
-    .panel.panel-default
-      .panel-body 
-        Orders navigation bar
-
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %p.navbar-text Customer:
+          %h4.navbar-text Aron Chock
+          %p.navbar-text Order:
+          %h4.navbar-text 54
+          %p.navbar-text Status:
+          %h4.navbar-text NEW
+        .navbar-right
+          %p discount: 3%
+          %p tax: 22%
+          %p profit: 3%
+        %h3.navbar-text.navbar-right Total: $1453.00
 .row
   .col-xs-3
     .alert.alert-info
