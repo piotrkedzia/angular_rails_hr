@@ -20,4 +20,7 @@ angular.module('ordersmaker').factory('OrderService',[
 
     line_items: (order) ->
       line_items = Restangular.one(model, order.id).getList('line_items')
+
+    show: (order_id) ->
+      Restangular.one('orders', order_id).get()
 ])

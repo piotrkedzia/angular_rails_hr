@@ -17,4 +17,7 @@ angular.module('ordersmaker').factory('CustomerService', [
 
     update: (customer) ->
       customer.put()
+
+    show: (customer_id) ->
+      Restangular.one('customers', customer_id).get()
 ])

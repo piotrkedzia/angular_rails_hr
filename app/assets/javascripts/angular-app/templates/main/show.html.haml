@@ -4,9 +4,9 @@
       .container-fluid
         .navbar-header
           %p.navbar-text Customer:
-          %h4.navbar-text Aron Chock
+          %h4.navbar-text {{ order.customer.first_name }} {{ order.customer.last_name }}
           %p.navbar-text Order:
-          %h4.navbar-text 54
+          %h4.navbar-text {{ order.id }}
           %p.navbar-text Status:
           %h4.navbar-text NEW
         .navbar-right

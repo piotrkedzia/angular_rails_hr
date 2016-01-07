@@ -9,6 +9,11 @@ class Api::CustomersController < ApplicationController
    render json: serialized_customers
   end
 
+  def show
+    customer = Customer.find(params[:id])
+    render json: customer, root: false
+  end
+
   def update
     customer = Customer.find(params[:id])
     if customer.update(customer_params)
