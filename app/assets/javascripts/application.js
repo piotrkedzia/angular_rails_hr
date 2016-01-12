@@ -6,6 +6,7 @@
 //= require lodash
 //= require restangular
 //= require angu-fixed-header-table
+//= require angular-ui-layout
 
 //= require angular-bootstrap
 

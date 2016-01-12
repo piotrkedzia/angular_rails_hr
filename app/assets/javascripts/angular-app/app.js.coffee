@@ -5,6 +5,7 @@
   'restangular'
   'ui.bootstrap'
   'anguFixedHeaderTable'
+  'ui.layout'
 ])
 
 @app.config([ '$routeProvider',
