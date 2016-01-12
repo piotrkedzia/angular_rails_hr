@@ -8,6 +8,7 @@
     "angular-mocks": "latest",
     "angular-route": "latest",
     "angular-messages": "latest",
-    "angu-fixed-header-table": "latest"
+    "angu-fixed-header-table": "latest",
+    "angular-ui-layout": "latest"
   }
 }
