@@ -7,7 +7,7 @@ FactoryGirl.define do
 
     factory :order_with_line_items do
       transient do
-        line_items_count 5
+        line_items_count { rand(15) }
       end
 
       after(:create) do |order, evaluator|
