@@ -1,24 +1,26 @@
 <div ng-app="ordersmaker">
 
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-3 col-md-2 sidebar" ng-controller="HeaderCtrl">
-        <ul class="nav nav-sidebar">
-          <li ng-class="{ active: is_active('/customers')}"><a href="#/customers">Customers<span class="sr-only">(current)</span></a></li>
-          <li ng-class="{ active: is_active('/products')}"><a href="#/products">Products</a></li>
-          <li ng-class="{ active: is_active('/orders')}"><a href="#/orders">Orders</a></li>
-          <li ng-class="{ active: is_active('/suppliers')}"><a href="#">Suppliers</a></li>
-          <li ng-class="{ active: is_active('/reports')}"><a href="#">Reports</a></li>
-          <li ng-class="{ active: is_active('/users')}"><a href="#">Users</a></li>
-        </ul>
+    <div ui-layout="{flow : 'column'}" >
+      <div ui-layout-container size="10%" >
+        <div ng-controller="HeaderCtrl">
+          <ul class="nav nav-sidebar">
+            <li ng-class="{ active: is_active('/customers')}"><a href="#/customers">Customers<span class="sr-only">(current)</span></a></li>
+            <li ng-class="{ active: is_active('/products')}"><a href="#/products">Products</a></li>
+            <li ng-class="{ active: is_active('/orders')}"><a href="#/orders">Orders</a></li>
+            <li ng-class="{ active: is_active('/suppliers')}"><a href="#">Suppliers</a></li>
+            <li ng-class="{ active: is_active('/reports')}"><a href="#">Reports</a></li>
+            <li ng-class="{ active: is_active('/users')}"><a href="#">Users</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
+      
+      <div ui-layout-container >
         <div class="view-container">
           <div ng-view class="view-frame animate-view"></div>
         </div>
-
       </div>
+      
     </div>
   </div>
 
