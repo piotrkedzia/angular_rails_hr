@@ -37,15 +37,6 @@ ActiveRecord::Schema.define(version: 20151229105341) do
 
   add_index "customers", ["order_id"], name: "index_customers_on_order_id", using: :btree
 
-  create_table "employees", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.string   "ssn",        limit: 255
-    t.integer  "salary"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "line_items", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "product_id"
@@ -59,23 +50,6 @@ ActiveRecord::Schema.define(version: 20151229105341) do
 
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
-
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.decimal  "total_gross"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description"
-    t.date     "released_on"
-    t.string   "cast"
-    t.string   "director"
-    t.string   "duration"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
 
   create_table "orders", force: :cascade do |t|
     t.text     "description"
@@ -103,18 +77,6 @@ ActiveRecord::Schema.define(version: 20151229105341) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "stars"
-    t.text     "comment"
-    t.integer  "movie_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "location"
-  end
-
-  add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
