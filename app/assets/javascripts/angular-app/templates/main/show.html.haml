@@ -1,6 +1,6 @@
 %div(ui-layout="{flow : 'row'}")
-  %div(ui-layout-container size="70%")
-    .row
+  %div(ui-layout-container size="60px")
+    .row.order-navbar
       .col-xs-12
         %nav.navbar.navbar-default
           .container-fluid
@@ -19,43 +19,46 @@
             %label.navbar-text.navbar-right 
               Search: 
               %input{ng_model: "searchText"}
-    .row
+              
+  %div.products-container(ui-layout-container size="50%" element-height-directive dividerSize="3")
+    .row.products
       .col-xs-2
         .alert.alert-info
           %img.img-rounded{ src: "/assets/gem.jpg", style: "max-width:100%; max-height:100%" }
     
       .col-xs-10
-        %table.product-table.table.table-striped{ fixed_header:"" }
+        %table.product-table.table.table-striped(fixed_header ng-style="{'height': products_table_height + px }" )
           %thead
             %tr
               %th Item
               %th price
               %th description
+              %th profit
           %tbody
             %tr{ ng_repeat: "product in products | filter:searchText" }
               %td {{ product.name }}
               %td {{ product.price }}
               %td {{ product.description }}
               %td {{ product.profit }}
+             
           
-  %div(ui-layout-container size="30%")
-    %div
-      .row
-        .col-xs-12
-          %table.line-item-table.table.table-striped{ fixed_header:"" }
-            %thead
-              %tr
-                %th item
-                %th price
-                %th quantity
-                %th value
-            %tbody
-              %tr{ ng_repeat: "line_item in line_items" }
-                %td {{ line_item.product.name }}
-                %td {{ line_item.price }}
-                %td {{ line_item.quantity }}
-                %td {{ line_item.value }}
-
+  .bottom-pane.line-items-container(ui-layout-container size="40%" element-height-directive)
+    .table-container
+      %table.line-item-table.table.table-striped( fixed_header ng-style="{'height': line_items_table_height + px }" )
+        %thead
+          %tr
+            %th item
+            %th price
+            %th quantity
+            %th value
+        %tbody
+          %tr{ ng_repeat: "line_item in line_items" }
+            %td {{ line_item.product.name }}
+            %td {{ line_item.price }}
+            %td {{ line_item.quantity }}
+            %td {{ line_item.value }}
+ 
+ 
 
 
 

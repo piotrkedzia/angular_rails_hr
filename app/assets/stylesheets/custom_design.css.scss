@@ -72,13 +72,12 @@ body {
 .table {
   margin-bottom: 5px;
 }
-.product-table {
-//  height: 200px;
-}
 
 // Order Main View
 
 //Navbar
+
+//Style for profit, discount, tax
 .navbar-right {
     p {
         margin-bottom: -5px;
@@ -86,3 +85,30 @@ body {
         margin-left: 10px;
       }
 }
+
+//remove padding and margins so split-pane child elements doesn't expand parents 
+.row.order-navbar {
+    margin-left: 0px;
+    margin-right: 0px;
+    
+    .col-xs-12 {
+        padding-left: 0px;
+        padding-right: 0px;
+        
+        .navbar {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.row.products {
+    margin-left: 0px;
+    margin-right: 0px;
+    
+    .col-xs-10 {
+        padding-right: 0px;
+    }
+}
+
+/* OrderMainView Product Table autoresize */
+
