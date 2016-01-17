@@ -6,7 +6,7 @@ angular.module('ordersmaker').controller("ProductListCtrl", [
       modalInstance = $modal.open({
         templateUrl: 'product/edit.html',
         controller: 'ProductEditModalCtrl'
-        size: 'lg'
+        size: 'md'
         resolve:
           product: ->
             product
