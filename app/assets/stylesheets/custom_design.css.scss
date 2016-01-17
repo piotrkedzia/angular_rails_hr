@@ -26,21 +26,6 @@ body {
     top: 1px;
 }
 }
-.nav-sidebar {
-    margin-bottom: 20px;
-    margin-left: -20px;
-    margin-right: -21px;
-}
-.nav-sidebar > li > a {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-/*
-.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
-    background-color: #428bca;
-    color: #fff;
-}
-*/
 
 .main {
     padding: 20px;
@@ -110,5 +95,13 @@ body {
     }
 }
 
-/* OrderMainView Product Table autoresize */
+//customize ui-splitter
+.ui-layout-column > .ui-splitbar {
+    background-color: #414141;
+    background: #414141;
+}
+.ui-layout-row > .ui-splitbar {
+    background-color: #414141;
+    background: #414141;
+}
 

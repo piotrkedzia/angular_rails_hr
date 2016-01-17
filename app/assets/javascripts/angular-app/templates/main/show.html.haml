@@ -1,4 +1,4 @@
-%div(ui-layout="{flow : 'row'}")
+%div(ui-layout="{flow : 'row', dividerSize:'8'}")
   %div(ui-layout-container size="60px")
     .row.order-navbar
       .col-xs-12
@@ -20,7 +20,7 @@
               Search: 
               %input{ng_model: "searchText"}
               
-  %div.products-container(ui-layout-container size="50%" element-height-directive dividerSize="3")
+  %div.products-container(ui-layout-container size="50%" element-height-directive dividerSize="8")
     .row.products
       .col-xs-2
         .alert.alert-info
