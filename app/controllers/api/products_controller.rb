@@ -35,7 +35,8 @@ class Api::ProductsController < ApplicationController
       :name,
       :description,
       :profit,
-      :price
+      :price,
+      :image_url
     ]
     params.require(:product).permit(attributes)
   end

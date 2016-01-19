@@ -5,6 +5,7 @@ angular.module('ordersmaker').controller("OrderShowCtrl", [
     order_id = { id: $routeParams.orderId }
     $scope.products_table_height = 200
     $scope.line_items_table_height = 200
+    $scope.current_image = ""
     
     OrderService.show(order_id.id).then((order) ->
       $scope.order = order
@@ -18,6 +19,8 @@ angular.module('ordersmaker').controller("OrderShowCtrl", [
 
     ProductService.list().then((products) ->
       $scope.products = products
+      $scope.current_image = products[0].image_url
+      console.dir products
       
     )
     
@@ -26,5 +29,7 @@ angular.module('ordersmaker').controller("OrderShowCtrl", [
       $scope.products_table_height = beforeContainer.size - 50
       
     )
+    $scope.setImage = (image_url)->
+      $scope.current_image = image_url
 
 ])

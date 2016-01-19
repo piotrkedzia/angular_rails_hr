@@ -10,7 +10,7 @@
               %p.navbar-text Order:
               %h4.navbar-text {{ order.id }}
               %p.navbar-text Status:
-              %h4.navbar-text NEW
+              %h4.navbar-text {{ order.status }}
             .navbar-right
               %p discount: {{ order.discount }}
               %p tax: {{ order.tax }}
@@ -18,13 +18,13 @@
             %h3.navbar-text.navbar-right Total: {{ order.item_total | currency }}
             %label.navbar-text.navbar-right 
               Search: 
-              %input{ng_model: "searchText"}
+              %input(ng_model="searchText")
               
   %div.products-container(ui-layout-container size="50%" element-height-directive dividerSize="8")
     .row.products
       .col-xs-2
         .alert.alert-info
-          %img.img-rounded{ src: "/assets/gem.jpg", style: "max-width:100%; max-height:100%" }
+          %img.img-rounded.product-image( ng-src="{{current_image}}")
     
       .col-xs-10
         %table.product-table.table.table-striped(fixed_header ng-style="{'height': products_table_height + px }" )
@@ -35,9 +35,9 @@
               %th description
               %th profit
           %tbody
-            %tr{ ng_repeat: "product in products | filter:searchText" }
+            %tr( ng_repeat="product in products | filter:searchText" ng-mouseover="setImage(product.image_url)" )
               %td {{ product.name }}
-              %td {{ product.price }}
+              %td {{ product.price | currency }}
               %td {{ product.description }}
               %td {{ product.profit }}
              
@@ -54,9 +54,9 @@
         %tbody
           %tr{ ng_repeat: "line_item in line_items" }
             %td {{ line_item.product.name }}
-            %td {{ line_item.price }}
+            %td {{ line_item.price | currency }}
             %td {{ line_item.quantity }}
-            %td {{ line_item.value }}
+            %td {{ line_item.value | currency}}
  
  
 

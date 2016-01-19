@@ -4,5 +4,6 @@ FactoryGirl.define do
     price { Faker::Commerce.price }
     description { Faker::Lorem.sentence }
     profit { Faker::Number.number(1).to_f / 10 }
+    image_url { Faker::Company.logo }
   end
 end
