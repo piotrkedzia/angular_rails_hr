@@ -1,6 +1,6 @@
 require 'factory_girl'
 
-FactoryGirl.find_definitions
+#FactoryGirl.find_definitions
 
 
 FactoryGirl.create_list(:product, 20)
