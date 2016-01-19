@@ -1,6 +1,6 @@
 <div class="col-xs-8">
   <h1>Product List</h1>
-  <a ng-click="editProduct(product)">Add new product</a>
+  <a class="btn btn-info" ng-click="editProduct(product)">Add new product</a>
   <table ng-if="products" class="table table-hover table-striped">
     <thead>
       <th>Name</th>
@@ -14,6 +14,7 @@
         <td>{{ product.description }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.profit }}</td>
+        <td><a class="btn btn-success" ng-click="editProduct(product)">Edit</a></td>
       </tr>
     </tbody>
   </table>

@@ -16,16 +16,16 @@
               %p tax: {{ order.tax }}
               %p profit: {{ order.profit }}
             %h3.navbar-text.navbar-right Total: {{ order.item_total | currency }}
-            %label.navbar-text.navbar-right 
-              Search: 
+            %label.navbar-text.navbar-right
+              Search:
               %input(ng_model="searchText")
-              
+
   %div.products-container(ui-layout-container size="50%" element-height-directive dividerSize="8")
     .row.products
       .col-xs-2
         .alert.alert-info
           %img.img-rounded.product-image( ng-src="{{current_image}}")
-    
+
       .col-xs-10
         %table.product-table.table.table-striped(fixed_header ng-style="{'height': products_table_height + px }" )
           %thead
@@ -40,8 +40,7 @@
               %td {{ product.price | currency }}
               %td {{ product.description }}
               %td {{ product.profit }}
-             
-          
+
   .bottom-pane.line-items-container(ui-layout-container size="40%" element-height-directive)
     .table-container
       %table.line-item-table.table.table-striped( fixed_header ng-style="{'height': line_items_table_height + px }" )
@@ -57,11 +56,3 @@
             %td {{ line_item.price | currency }}
             %td {{ line_item.quantity }}
             %td {{ line_item.value | currency}}
- 
- 
-
-
-
-
-
-

@@ -17,3 +17,5 @@
         %td {{ order.description }}
         %td {{ order.status }}
         %td {{ order.confirmed_date  }}
+        %td
+          %a(class="btn btn-success" ng-href="#/orders/{{ order.id }}") Edit

@@ -1,8 +1,8 @@
 .col-xs-8
   %h1 Customers List
-  %a{ ng_click: "editCustomer(customer)" }
+  %a( class="btn btn-info" ng-click="editCustomer(customer)" )
     Add new customer
-  %table.table.table-hover.table-striped{ ng_if:"customers" }
+  %table.table.table-striped{ ng_if:"customers" }
     %thead
       %th First name
       %th Last name
@@ -14,7 +14,7 @@
     %tbody
       %tr{ ng_repeat: "customer in customers" }
         %td
-          %a{ ng_click: "editCustomer(customer)" } 
+          %a{ ng_click: "editCustomer(customer)" }
             {{ customer.first_name }}
         %td {{ customer.last_name }}
         %td {{ customer.email }}
@@ -22,3 +22,5 @@
         %td {{ customer.address }}
         %td {{ customer.zip_code }}
         %td {{ customer.city }}
+        %td
+          %a(class="btn btn-success" ng-click="editCustomer(customer)") Edit
