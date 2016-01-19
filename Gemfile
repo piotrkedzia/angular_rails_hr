@@ -20,6 +20,7 @@ gem 'pry-byebug'
 gem 'responders'
 gem 'haml'
 gem 'rabl'
+gem 'factory_girl_rails'
 # Also add either `oj` or `yajl-ruby` as the JSON parser
 gem 'oj'
 # Use SCSS for stylesheets
@@ -62,7 +63,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
 end
 
 group :production, :staging do
