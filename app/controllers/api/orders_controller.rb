@@ -1,6 +1,6 @@
 class Api::OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.includes(:customer)
   end
 
   def show
