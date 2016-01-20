@@ -20,7 +20,7 @@
               Search:
               %input(ng_model="searchText")
 
-  %div.products-container(ui-layout-container size="50%" element-height-directive dividerSize="8")
+  %div.products-container(ui-layout-container size="50%" element-height dividerSize="8")
     .row.products
       .col-xs-2
         .alert.alert-info
@@ -35,15 +35,15 @@
               %th description
               %th profit
           %tbody
-            %tr( ng_repeat="product in products | filter:searchText" ng-mouseover="setImage(product.image_url)" )
+            %tr(ng_repeat="product in products | filter:searchText" ng-mouseover="setImage(product.image_url)")
               %td {{ product.name }}
               %td {{ product.price | currency }}
               %td {{ product.description }}
               %td {{ product.profit }}
 
-  .bottom-pane.line-items-container(ui-layout-container size="40%" element-height-directive)
+  .bottom-pane.line-items-container(ui-layout-container size="40%" element-height)
     .table-container
-      %table.line-item-table.table.table-striped( fixed_header ng-style="{'height': line_items_table_height + px }" )
+      %table.line-item-table.table.table-striped(fixed_header ng-style="{'height': line_items_table_height + px }")
         %thead
           %tr
             %th item

@@ -1,6 +1,6 @@
 class Api::LineItemsController < ApplicationController
   def index
-    @line_items = LineItem.where(order_id: params[:order_id].to_i)
+    @line_items = LineItem.includes(:product).where(order_id: params[:order_id].to_i)
   end
 
   def show

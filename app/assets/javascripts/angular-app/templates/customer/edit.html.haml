@@ -5,7 +5,7 @@
   %form{ name:"form", ng_submit:"submitCustomer(customer)", novalidate: true }
     .form-group
       .row
-        .col-xs-12
+        .col-xs-6
           %label
             First name
             %span.required *
@@ -13,9 +13,7 @@
           .bg-danger{ ng_show:"form.first_name.$invalid" }
             %span{ ng_show:"form.first_name.$error.server" } {{ errors.first_name }}
 
-    .form-group
-      .row
-        .col-xs-12
+        .col-xs-6
           %label
             Last name
             %span.required *
@@ -35,7 +33,7 @@
 
     .form-group
       .row
-        .col-xs-12
+        .col-xs-6
           %label
             Email
             %span.required *
@@ -43,9 +41,7 @@
           .bg-danger{ ng_show:"form.email.$invalid" }
             %span{ ng_show:"form.email.$error.server" } {{ errors.email }}
 
-    .form-group
-      .row
-        .col-xs-12
+        .col-xs-6
           %label
             Phone number
           %input.form-control{ type:"text", name:"phone_number", ng_model:"customer.phone_number", 'server-error'=>true }
@@ -54,12 +50,19 @@
 
     .form-group
       .row
-        .col-xs-12
+        .col-xs-6
           %label
             Tax identification number
           %input.form-control{ type:"text", name:"tax_identification_number", ng_model:"customer.tax_identification_number", 'server-error'=>true }
           .bg-danger{ ng_show:"form.tax_identification_number.$invalid" }
             %span{ ng_show:"form.tax_identification_number.$error.server" } {{ errors.tax_identification_number }}
+
+        .col-xs-6
+          %label
+            Discount
+          %input.form-control{ type:"text", name:"discount", ng_model:"customer.discount", 'server-error'=>true}
+          .bg-danger{ ng_show:"form.discount.$invalid" }
+            %span{ ng_show:"form.discount.$error.server" } {{ errors.discount }}
 
 
     .form-group
@@ -75,18 +78,7 @@
 
     .form-group
       .row
-        .col-xs-12
-          %label
-            Zip
-            %span.required *
-          %input.form-control{ type:"text", name:"zip_code", ng_model:"customer.zip_code", 'server-error'=>true}
-          .bg-danger{ ng_show:"form.zip_code.$invalid" }
-            %span{ ng_show:"form.zip_code.$error.server" } {{ errors.zip_code }}
-
-
-    .form-group
-      .row
-        .col-xs-12
+        .col-xs-6
           %label
             City
             %span.required *
@@ -94,14 +86,13 @@
           .bg-danger{ ng_show:"form.city.$invalid" }
             %span{ ng_show:"form.city.$error.server" } {{ errors.city }}
 
-    .form-group
-      .row
-        .col-xs-12
+        .col-xs-6
           %label
-            Discount
-          %input.form-control{ type:"text", name:"discount", ng_model:"customer.discount", 'server-error'=>true}
-          .bg-danger{ ng_show:"form.discount.$invalid" }
-            %span{ ng_show:"form.discount.$error.server" } {{ errors.discount }}
+            Zip
+            %span.required *
+          %input.form-control{ type:"text", name:"zip_code", ng_model:"customer.zip_code", 'server-error'=>true}
+          .bg-danger{ ng_show:"form.zip_code.$invalid" }
+            %span{ ng_show:"form.zip_code.$error.server" } {{ errors.zip_code }}
 
 
     .form-group
@@ -121,8 +112,6 @@
           %input.form-control{ type:"text", name:"note", ng_model:"customer.note", 'server-error'=>true}
           .bg-danger{ ng_show:"form.note.$invalid" }
             %span{ ng_show:"form.note.$error.server" } {{ errors.note }}
-
-
 
     .modal-footer
       %button.btn.btn-default{ type:"button", data_dismiss:"modal", ng_click:"cancel()" }
