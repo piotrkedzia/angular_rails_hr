@@ -1,4 +1,5 @@
-angular.module('ordersmaker').directive('elementHeightDirective', function($timeout) {
+angular.module('ordersmaker').directive('elementHeight', [
+    "$timeout", function($timeout) {
     return {
         restrict: 'A',
         link: function(scope, element) {
@@ -19,4 +20,4 @@ angular.module('ordersmaker').directive('elementHeightDirective', function($time
             $timeout(ready, 0);
         }
     };
-  });
+  }]);
