@@ -12,6 +12,7 @@ I'm writing this app for training purpose. I was just curious how much time woul
 ###Technologies used
 
 ####Frontend
+* angularjs
 * coffee-rails
 * angular-rails-templates
 * bower-rails
