@@ -3,7 +3,7 @@
 This is an early beta port of my desktop app (written in C#/WinForms). App can create orders and manage them (like simple invoices). App is written in Ruby/Rails 4 and CoffeeScript/AngularJS. Orders support CRUD operations. All task operations are done on the client side and synchronized to the server. The Rails backend servs a RESTful API used by AngularJS SPA.
 
 Check out the demo at: https://orders-maker.herokuapp.com/#/products
-
+![desktop app](https://github.com/piotrkedzia/orders_maker/blob/master/public/FullOrder.png)
 == Purpose
 
 I'm writing this app for training purpose. I was just curious how much time would take me rewriting C#/WinForms desktop app to Ruby/Rails/AngularJS web app. Now i have opportunity to write again the same application but with diferent point of view.
