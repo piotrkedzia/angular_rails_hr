@@ -74,5 +74,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'guard'
-   gem 'guard-rspec', require: false
+  gem 'guard-rspec', require: false
+  gem 'rubocop'
 end
