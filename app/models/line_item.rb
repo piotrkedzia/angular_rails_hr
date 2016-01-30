@@ -4,4 +4,21 @@ class LineItem < ActiveRecord::Base
 
   belongs_to :product
   belongs_to :order
+
+  after_commit :recalculate_order
+  before_save :calculate_value
+
+  protected
+    def recalculate_order
+      self.order.calculate_total
+    end
+
+    def pull_price_from_product
+      self.price = self.product.price
+    end
+
+    def calculate_value
+      pull_price_from_product
+      self.value = self.quantity * self.price
+    end
 end
