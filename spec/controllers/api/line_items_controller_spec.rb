@@ -7,11 +7,11 @@ describe Api::LineItemsController do
   let!(:order) { create(:order, customer_id: customer.id) }
   let!(:order_with_line_items) { create(:order_with_line_items) }
   let!(:product) { create(:product) }
-
+  let!(:line_item) { order_with_line_items.line_items.first }
   let(:line_item_attributes) do
-    attributes_for(:line_item).merge(order_id: order.id, product_id: product.id)
+    attributes_for(:line_item).merge(order_id: order_with_line_items.id, product_id: product.id)
   end
-  let(:line_item_keys) { ["id", "order_id", "notes", "value", "quantity", "product"] }
+  let(:line_item_keys) { ["id", "order_id", "notes", "value", "quantity", "price", "product"] }
 
   describe 'GET #index' do
     before do
@@ -30,7 +30,7 @@ describe Api::LineItemsController do
 
   describe 'GET #show' do
     before do
-      get :show, format: :json, order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id
+      get :show, format: :json, order_id: order_with_line_items.id, id: line_item.id
     end
 
     it 'returns 200 code' do
@@ -57,7 +57,10 @@ describe Api::LineItemsController do
 
   describe 'PUT #update' do
     before do
-      put :update, format: :json,  order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id, line_item: line_item_attributes 
+      put :update, format: :json,
+          order_id: order_with_line_items.id,
+          id: line_item.id,
+          line_item: line_item_attributes
     end
 
     it 'returns 204 code' do
@@ -65,18 +68,18 @@ describe Api::LineItemsController do
     end
 
     it 'updates the attribute in params' do
-      expect(LineItem.find(order_with_line_items.line_items.first.id).value.to_f).to be order_with_line_items.line_items.first.value.to_f
+      expect(LineItem.find(line_item.id).notes).to eq(line_item_attributes[:notes])
     end
   end
 
   describe 'DELETE #destroy' do
     it 'returns 204 code' do
-      delete :destroy,  format: :json, order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id
+      delete :destroy,  format: :json, order_id: order_with_line_items.id, id: line_item.id
       expect(response.status).to eq(204)
     end
 
     it 'decrements the amount of order line items' do
-      expect { delete :destroy,  format: :json, order_id: order_with_line_items.id, id: order_with_line_items.line_items.first.id }
+      expect { delete :destroy,  format: :json, order_id: order_with_line_items.id, id: line_item.id }
         .to change(LineItem, :count).by(-1)
     end
   end
