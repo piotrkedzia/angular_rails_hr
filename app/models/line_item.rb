@@ -9,16 +9,17 @@ class LineItem < ActiveRecord::Base
   before_save :calculate_value
 
   protected
-    def recalculate_order
-      self.order.calculate_total
-    end
 
-    def pull_price_from_product
-      self.price = self.product.price
-    end
+  def recalculate_order
+    order.calculate_total
+  end
 
-    def calculate_value
-      pull_price_from_product
-      self.value = self.quantity * self.price
-    end
+  def pull_price_from_product
+    self.price = product.price
+  end
+
+  def calculate_value
+    pull_price_from_product
+    self.value = quantity * price
+  end
 end

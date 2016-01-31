@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable AlignHash
 describe Api::LineItemsController do
   render_views
   before { controller.class.skip_before_filter :authenticate_api! }
@@ -9,9 +10,12 @@ describe Api::LineItemsController do
   let!(:product) { create(:product) }
   let!(:line_item) { order_with_line_items.line_items.first }
   let(:line_item_attributes) do
-    attributes_for(:line_item).merge(order_id: order_with_line_items.id, product_id: product.id)
+    attributes_for(:line_item)
+      .merge(order_id: order_with_line_items.id, product_id: product.id)
   end
-  let(:line_item_keys) { ["id", "order_id", "notes", "value", "quantity", "price", "product"] }
+  let(:line_item_keys) do
+    %w(id order_id notes value quantity price product)
+  end
 
   describe 'GET #index' do
     before do
@@ -30,7 +34,8 @@ describe Api::LineItemsController do
 
   describe 'GET #show' do
     before do
-      get :show, format: :json, order_id: order_with_line_items.id, id: line_item.id
+      get :show, format: :json, order_id: order_with_line_items.id,
+          id: line_item.id
     end
 
     it 'returns 200 code' do
@@ -45,13 +50,19 @@ describe Api::LineItemsController do
 
   describe 'POST #create' do
     it 'returns 201 code' do
-      post :create, format: :json, order_id: order_with_line_items.id, line_item: line_item_attributes
+      post :create, format: :json, order_id: order_with_line_items.id,
+           line_item: line_item_attributes
       expect(response.status).to eq(201)
     end
 
     it 'increments the amount of order line items' do
-      expect { post :create, format: :json, order_id: order_with_line_items.id, line_item: line_item_attributes }
-        .to change(LineItem, :count).by(1)
+      expected = expect do
+        post :create,
+             format: :json,
+             order_id: order_with_line_items.id,
+             line_item: line_item_attributes
+      end
+      expected.to change(LineItem, :count).by(1)
     end
   end
 
@@ -68,19 +79,26 @@ describe Api::LineItemsController do
     end
 
     it 'updates the attribute in params' do
-      expect(LineItem.find(line_item.id).notes).to eq(line_item_attributes[:notes])
+      expect(LineItem.find(line_item.id).notes)
+        .to eq(line_item_attributes[:notes])
     end
   end
 
   describe 'DELETE #destroy' do
     it 'returns 204 code' do
-      delete :destroy,  format: :json, order_id: order_with_line_items.id, id: line_item.id
+      delete :destroy, format: :json, order_id: order_with_line_items.id,
+             id: line_item.id
       expect(response.status).to eq(204)
     end
 
     it 'decrements the amount of order line items' do
-      expect { delete :destroy,  format: :json, order_id: order_with_line_items.id, id: line_item.id }
-        .to change(LineItem, :count).by(-1)
+      expected = expect do
+        delete :destroy,
+               format: :json,
+               order_id: order_with_line_items.id,
+               id: line_item.id
+      end
+      expected.to change(LineItem, :count).by(-1)
     end
   end
 end
