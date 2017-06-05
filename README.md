@@ -9,9 +9,9 @@ Check out the demo at: https://orders-maker.herokuapp.com/#/products
 
 I'm writing this app for training purpose. I was just curious how much time would take me rewriting C#/WinForms desktop app to Ruby/Rails/AngularJS web app. Now i have opportunity to write again the same application but with diferent point of view.
 
-###Technologies used
+### Technologies used
 
-####Frontend
+#### Frontend
 * angularjs
 * coffee-rails
 * angular-rails-templates
@@ -19,7 +19,7 @@ I'm writing this app for training purpose. I was just curious how much time woul
 * haml
 * sass-rails
 
-####Backend
+#### Backend
 
 * Ruby 2.2.2
 * Rails 4.2
